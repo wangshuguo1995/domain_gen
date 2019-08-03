@@ -14,6 +14,8 @@ write_to_file: False    -> records will be written to project root as JSON if se
 
 The program will terminate when <code>max_records</code> is reached or <code>ctrl-c</code> is pressed.
 
+<REQUIRES PYTHON3 ONLY>
+
 <pre>
   <code>
 
@@ -36,6 +38,18 @@ The program will terminate when <code>max_records</code> is reached or <code>ctr
 
   </code>
 </pre>
+
+
+<ul>
+  <li>
+    <ul>
+      <li><b>Download, navigate to project root and run:</b></li>
+      <li><code>pip install -e .</code></li>
+      <li><b>Or install directly from Github:</b></li>
+      <li><code>pip install git+https://github.com/rootVIII/tube_dream</code></li>
+    </ul>
+  </li>
+</ul>
 
 
 This was developed on Ubuntu 18.04.4 LTS.
