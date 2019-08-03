@@ -28,7 +28,7 @@ if __name__ == "__main__":
     try:
         Producer(q, config['tld'], word_path).get_domains()
     except KeyboardInterrupt:
-        print('\n\nexiting Domain Generator...\n\n')
+        print('\n\nexiting DomainGen...\n\n')
     q.join()
     if config['write_to_file']:
         file_out = datetime.now().strftime('%Y%m%d%H%M%S_out.txt')
