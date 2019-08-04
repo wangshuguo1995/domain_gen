@@ -3,6 +3,7 @@ from yaml import safe_load
 from json import load, dump
 from random import randint
 from urllib.request import urlopen
+from os.path import isfile
 from os import environ
 from colorama import init
 from colorama import Fore, Style
@@ -48,7 +49,9 @@ def api_keys():
     return environ['GODADDY_KEY'], environ['GODADDY_SECRET']
 
 
-def check_config(conf):
+def check_config(conf, word_list, conf_file):
+    if not isfile(word_list) or not isfile(conf_file):
+        return 'Missing conifg.yml or word_list.json'
     if len(conf) != 3:
         return 'Invalid config.yml values'
     try:
@@ -61,6 +64,7 @@ def check_config(conf):
         return 'Invalid max_records value in config.yml'
     if conf['tld'][0] != '.':
         return 'Top Level Domain name missing leading period'
+    return None
 
 
 def intro():

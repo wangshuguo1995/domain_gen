@@ -13,7 +13,7 @@ if __name__ == "__main__":
     config_path = Subpaths().config_path()
     config = get_config(config_path)
     try:
-        error = check_config(config)
+        error = check_config(config, word_path, config_path)
     except Exception as e:
         print(type(e).__name__, e)
         exit(1)
