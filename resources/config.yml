@@ -1,5 +1,0 @@
----
-tld: .com
-max_try: 200
-write_to_file: False
-...
