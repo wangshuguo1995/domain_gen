@@ -1,24 +1,21 @@
 #! /usr/bin/python3
-from .utils import get_pair, url_maker, read, site_exists
+from time import sleep
+from .utils import get_pair, read
 
 
 class Producer:
-    def __init__(self, q, tld, words, max_records=100):
+    def __init__(self, q, tld, words, max_=100):
         self.que = q
-        self.tld = tld
         self.words = read(words)
-        self.max_records = max_records
+        self.max_ = max_
+        self.tld = tld
 
     def get_doms(self):
         i = 0
-        while i < self.max_records:
+        while i < self.max_:
             domain = get_pair(self.words)
-            exists = False
-            for url in url_maker(domain, self.tld):
-                if site_exists(url):
-                    exists = True
-                    print(domain + self.tld + ' \n\nEXISTS\n\n')
-                    break
-            if not exists:
-                i += 1
-                self.que.put(domain + self.tld)
+            i += 1
+            if i > 500:
+                sleep(.1)
+                i = 0
+            self.que.put(domain + self.tld)

@@ -19,9 +19,9 @@ Set entries in <code>domain_gen/resources/config.yml</code> for:
 
 <pre>
   <code>
-tld: .com               -> top level domain   (.com  .org  .net  .io   etc...)
-max_records: 1000       -> max number of records to print to stdout/write to file
-write_to_file: False    -> records will be written to project root as JSON if set to True
+tld: .com               -> top level domain   (.com  .org  .net  .io   etc... include the leading '.')
+max_requests: 1500      -> max number of URLs/attempts (always printed to stdout/terminal)
+write_to_file: False    -> available URLs/prices will be written to project root as JSON if set to True
   </code>
 </pre>
 
