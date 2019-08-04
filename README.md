@@ -2,6 +2,19 @@
 
 ###### Search for random, available, 2-word domains. Availability and price are returned.
 
+GODADDY API Keys are required (They are free)
+
+Save them as environment variables regardless of your system.<br>
+They must be named as follows:
+
+<pre>
+  <code>
+GODADDY_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+GODADDY_SECRET=xxxxxxxxxxxxxxxxxxxxxxx
+  </code>
+</pre>
+
+
 Set entries in <code>domain_gen/resources/config.yml</code> for:
 
 <pre>
@@ -41,14 +54,12 @@ The program will terminate when <code>max_records</code> is reached or <code>ctr
 
 
 <ul>
-  <li>
     <ul>
       <li><b>Download, navigate to project root and run:</b></li>
       <li><code>pip install -e .</code></li>
       <li><b>Or install directly from Github:</b></li>
       <li><code>pip install git+https://github.com/rootVIII/tube_dream</code></li>
     </ul>
-  </li>
 </ul>
 
 
