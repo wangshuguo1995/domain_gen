@@ -31,16 +31,6 @@ REQUIREMENTS: Python3
 
 <img src="https://github.com/rootVIII/domain_gen/blob/master/sc.png" alt="example1" height="675" width="725"><hr>
 
-<ul>
-    <ul>
-      <li><b>Download, navigate to project root and run:</b></li>
-      <li><code>pip install -e .</code></li>
-      <li><b>Or install directly from Github:</b></li>
-      <li><code>pip install git+https://github.com/rootVIII/tube_dream</code></li>
-    </ul>
-</ul>
-
-
 This was developed on Ubuntu 18.04.4 LTS.
 <hr>
 <b>Author: James Loye Colley  04AUG2019</b><br><br>
