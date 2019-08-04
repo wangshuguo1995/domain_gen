@@ -1,5 +1,4 @@
 #! /usr/bin/python3
-from time import sleep
 from .utils import get_pair, read
 
 
@@ -15,7 +14,4 @@ class Producer:
         while i < self.max_:
             domain = get_pair(self.words)
             i += 1
-            if i > 500:
-                sleep(.1)
-                i = 0
             self.que.put(domain + self.tld)

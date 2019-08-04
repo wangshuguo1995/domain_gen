@@ -3,7 +3,6 @@ from yaml import safe_load
 from json import load, dump
 from random import randint
 from sys import exit
-from urllib.request import urlopen
 from os import environ
 from os.path import isfile
 from colorama import init
@@ -29,23 +28,6 @@ def get_pair(words):
     return words[randint(0, len(words)-1)] + words[randint(0, len(words)-1)]
 
 
-def url_maker(phrase):
-    return [
-        'http://%s' % phrase,
-        'https://%s' % phrase,
-        'http://www.%s' % phrase,
-        'https://www.%s' % phrase
-    ]
-
-
-def site_exists(url):
-    try:
-        urlopen(url, timeout=4)
-    except Exception:
-        return False
-    return True
-
-
 def api_keys():
     return environ['GODADDY_KEY'], environ['GODADDY_SECRET']
 
@@ -64,9 +46,9 @@ def check_config(conf):
     except KeyError:
         return 'API Keys not stored as environment variables'
     try:
-        int(conf['max_attempts'])
+        int(conf['max_try'])
     except Exception:
-        return 'Invalid max_attempts value in config.yml'
+        return 'Invalid max_try value in config.yml'
     if conf['tld'][0] != '.':
         return 'Top Level Domain name missing leading period'
     return None
@@ -95,7 +77,7 @@ def intro():
 ************ ************ ****    **** * * * * * * * * * * * * * * * * * *
         """
     )
-    print(Fore.CYAN + 'by rootVIII')
+    print(Fore.CYAN + 'Author:  rootVIII')
     print(Style.RESET_ALL)
 
 

@@ -31,9 +31,9 @@ if __name__ == "__main__":
         t.daemon = True
         t.start()
     try:
-        Producer(q, config['tld'], word_path, config['max_attempts']).get_doms()
+        Producer(q, config['tld'], word_path, config['max_try']).get_doms()
     except KeyboardInterrupt:
-        print_red('\n\nexiting DomainGen early...\n\n')
+        print_red('\n\nexiting DomainGen early...\n')
     q.join()
     if config['write_to_file']:
         file_out = datetime.now().strftime('%Y%m%d%H%M%S_out.txt')
