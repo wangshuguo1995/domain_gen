@@ -7,7 +7,7 @@ setup(
     packages=["domain_gen"],
     package_data={
         'domain_gen': [
-                'domain_gen/domain_gen/resources/*',
+                'domain_gen/resources/*',
             ]
     },
     include_package_data=True,
@@ -21,7 +21,7 @@ setup(
         ]
     },
     data_files=[
-        ('words', ['domain_gen/gomain_gen/word_list.json']),
-        ('config', ['domain_gen/gomain_gen/config.yml'])
+        ('words', ['domain_gen/word_list.json']),
+        ('config', ['domain_gen/config.yml'])
     ]
 )

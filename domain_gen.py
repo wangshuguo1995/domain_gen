@@ -8,7 +8,7 @@ from utils import get_config, check_config, check_paths
 from utils import Consumer, Producer, intro, write, print_red
 
 
-if __name__ == "__main__":
+def main():
     real_path = Subpaths().get_rpath()
     word_path = Subpaths().words_path()
     config_path = Subpaths().config_path()
