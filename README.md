@@ -29,7 +29,7 @@ The program will terminate when <code>max_records</code> is reached or <code>ctr
 
 <REQUIRES PYTHON3 ONLY>
 
-<img src="https://github.com/rootVIII/domain_gen/blob/master/sc.png" alt="example1" height="675" width="950"><hr>
+<img src="https://github.com/rootVIII/domain_gen/blob/master/sc.png" alt="example1" height="675" width="725"><hr>
 
 <ul>
     <ul>
