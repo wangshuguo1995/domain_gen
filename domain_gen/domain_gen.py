@@ -9,9 +9,10 @@ from utils import Consumer, Producer, intro, write, print_red
 
 
 if __name__ == "__main__":
-    real_path = Subpaths().get_rpath()
-    word_path = Subpaths().words_path()
-    config_path = Subpaths().config_path()
+    paths = Subpaths()
+    real_path = paths.get_rpath()
+    word_path = paths.words_path()
+    config_path = paths.config_path()
     check_paths(word_path, config_path)
     config = get_config(config_path)
     try:
