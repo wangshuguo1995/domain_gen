@@ -1,23 +1,26 @@
 #! /usr/bin/python3
 from threading import Thread
-from datetime import datetime
-from utils import Subpaths, get_config
-from utils import Consumer, Producer
-from utils import intro, write
 from queue import Queue
-
-
-def paths():
-    return [
-        Subpaths().get_rpath(),
-        Subpaths().words_path(),
-        Subpaths().config_path()
-    ]
+from datetime import datetime
+from sys import exit
+from utils import Subpaths, get_config, check_config
+from utils import Consumer, Producer, intro, write
 
 
 if __name__ == "__main__":
-    real_path, word_path, config_path = paths()
+    real_path = Subpaths().get_rpath()
+    word_path = Subpaths().words_path()
+    config_path = Subpaths().config_path()
     config = get_config(config_path)
+    try:
+        error = check_config(config)
+    except Exception as e:
+        print(type(e).__name__, e)
+        exit(1)
+    else:
+        if error is not None:
+            print(error)
+            exit(1)
     intro()
     q = Queue()
     consumer = Consumer(q)
@@ -26,7 +29,7 @@ if __name__ == "__main__":
         t.daemon = True
         t.start()
     try:
-        Producer(q, config['tld'], word_path).get_domains()
+        Producer(q, config['tld'], word_path, config['max_records']).get_doms()
     except KeyboardInterrupt:
         print('\n\nexiting DomainGen...\n\n')
     q.join()

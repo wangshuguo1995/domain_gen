@@ -3,13 +3,15 @@ from .utils import get_pair, url_maker, read, site_exists
 
 
 class Producer:
-    def __init__(self, que, top_level_domain, words_path):
-        self.que = que
-        self.tld = top_level_domain
-        self.words = read(words_path)
+    def __init__(self, q, tld, words, max_records=100):
+        self.que = q
+        self.tld = tld
+        self.words = read(words)
+        self.max_records = max_records
 
-    def get_domains(self):
-        while True:
+    def get_doms(self):
+        i = 0
+        while i < self.max_records:
             domain = get_pair(self.words)
             exists = False
             for url in url_maker(domain, self.tld):
@@ -18,4 +20,5 @@ class Producer:
                     print(domain + self.tld + ' \n\nEXISTS\n\n')
                     break
             if not exists:
+                i += 1
                 self.que.put(domain + self.tld)

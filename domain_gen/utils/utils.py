@@ -3,6 +3,7 @@ from yaml import safe_load
 from json import load, dump
 from random import randint
 from urllib.request import urlopen
+from os import environ
 from colorama import init
 from colorama import Fore, Style
 
@@ -41,6 +42,25 @@ def site_exists(url):
     except Exception:
         return False
     return True
+
+
+def api_keys():
+    return environ['GODADDY_KEY'], environ['GODADDY_SECRET']
+
+
+def check_config(conf):
+    if len(conf) != 3:
+        return 'Invalid config.yml values'
+    try:
+        api_keys()
+    except KeyError:
+        return 'API Keys not stored as environment variables'
+    try:
+        int(conf['max_records'])
+    except Exception:
+        return 'Invalid max_records value in config.yml'
+    if conf['tld'][0] != '.':
+        return 'Top Level Domain name missing leading period'
 
 
 def intro():

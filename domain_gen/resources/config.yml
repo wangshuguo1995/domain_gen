@@ -1,5 +1,5 @@
 ---
 tld: .com
-max_records: 1000
+max_records: 200
 write_to_file: False
 ...

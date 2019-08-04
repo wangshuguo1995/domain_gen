@@ -5,6 +5,8 @@ from os.path import realpath
 class Rpath:
     def __init__(self):
         p = realpath(__file__)
+        if '\\' in p:
+            p = p.replace('\\', '/')
         self.rpath = '/' + '/'.join([i for i in p.split("/")[:-2] if i])
         self.rpath += '/'
 

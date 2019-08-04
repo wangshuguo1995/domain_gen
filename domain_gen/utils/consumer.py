@@ -10,7 +10,7 @@ class Consumer:
         while True:
             url = self.que.get()
             self.domain_names.append(url)
-            # check go daddy here
+            # check go daddy here and thread it
             print(url + ' does not exist')
             self.que.task_done()
 
