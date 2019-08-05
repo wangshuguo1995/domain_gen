@@ -19,6 +19,15 @@ def read(path):
         return load(json_in)
 
 
+def add_data(path, new_data):
+    path += 'domains.json'
+    if isfile(path):
+        existing = read(path)
+        write(path, existing + new_data)
+    else:
+        write(path, new_data)
+
+
 def get_config(path):
     with open(path) as yml_in:
         return safe_load(yml_in)
