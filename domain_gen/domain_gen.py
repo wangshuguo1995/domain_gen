@@ -27,7 +27,7 @@ def main():
     intro()
     q = Queue()
     consumer = Consumer(q)
-    for i in range(8):
+    for i in range(16):
         t = Thread(target=consumer.consume_domains)
         t.daemon = True
         t.start()

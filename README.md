@@ -27,7 +27,7 @@ write_to_file: False    -> available URLs/prices will be written to project root
 Unfortunatley GO Daddy has API restrictions that block repeated calls in succession (after 100-150).<br>
 
 Therefore the max_requests amount should be left no higher than 100 and the program can be ran every<br>
-30 seconds or so.
+30 seconds or so (lots of redlines in stdout is a sign that requests are being blocked).
 
 
 The program will terminate when <code>max_records</code> is reached or <code>ctrl-c</code> is pressed.
