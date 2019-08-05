@@ -1,12 +1,11 @@
 #! /usr/bin/python3
 from threading import Thread
 from queue import Queue
-from datetime import datetime
 from time import sleep
 from sys import exit
-from utils import Subpaths, add_data
 from utils import get_config, check_config, check_paths
-from utils import Consumer, Producer, intro, write, print_red
+from utils import Subpaths, add_data, print_red
+from utils import Consumer, Producer, intro
 
 
 def produce_consume():
@@ -53,5 +52,5 @@ if __name__ == "__main__":
         thread.start()
         thread.join()
     except KeyboardInterrupt:
-        print_red('\nExiting Domain Gen')
+        print_red('Exiting Domain Gen')
     print_red('Finished')
