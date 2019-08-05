@@ -34,7 +34,7 @@ The program will terminate when <code>max_records</code> is reached or <code>ctr
 
 REQUIREMENTS: Python3
 
-<img src="https://github.com/rootVIII/domain_gen/blob/master/sc.png" alt="example1" height="675" width="725"><hr>
+<img src="https://github.com/rootVIII/domain_gen/blob/master/sc.png" alt="example1" height="675" width="700"><hr>
 
 This was developed on Ubuntu 18.04.4 LTS.
 <hr>
