@@ -1,5 +1,5 @@
 ---
 tld: .com
-max_try: 200
-write_to_file: False
+max_try: 150
+write_to_file: True
 ...

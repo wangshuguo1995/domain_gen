@@ -8,7 +8,7 @@ from utils import get_config, check_config, check_paths
 from utils import Consumer, Producer, intro, write, print_red
 
 
-if __name__ == "__main__":
+def main():
     paths = Subpaths()
     real_path = paths.get_rpath()
     word_path = paths.words_path()
@@ -34,9 +34,19 @@ if __name__ == "__main__":
     try:
         Producer(q, config['tld'], word_path, config['max_try']).get_doms()
     except KeyboardInterrupt:
-        print_red('\n\nexiting DomainGen early...\n')
+        pass
     q.join()
     if config['write_to_file']:
         file_out = datetime.now().strftime('%Y%m%d%H%M%S_out.txt')
         write(real_path + file_out, consumer.get_domains())
-    print_red('finished')
+
+
+if __name__ == "__main__":
+    try:
+        thread = Thread(target=main)
+        thread.daemon = True
+        thread.start()
+        thread.join()
+    except KeyboardInterrupt:
+        print_red('\nExiting Domain Gen')
+    print_red('Finished')

@@ -20,7 +20,7 @@ Set entries in <code>domain_gen/resources/config.yml</code> for:
 <pre>
   <code>
 tld: .com               -> top level domain   (.com  .org  .net  .io   etc... include the leading '.')
-max_requests: 1500      -> max number of URLs/attempts (always printed to stdout/terminal)
+max_requests: 100       -> max number of URLs/attempts (always printed to stdout/terminal)
 write_to_file: False    -> available URLs/prices will be written to project root as JSON if set to True
   </code>
 </pre>
