@@ -24,6 +24,11 @@ max_requests: 100       -> max number of URLs/attempts (always printed to stdout
 write_to_file: False    -> available URLs/prices will be written to project root as JSON if set to True
   </code>
 </pre>
+Unfortunatley GO Daddy has API restrictions that block repeated calls in succession (after 100-150).<br>
+
+Therefore the max_requests amount should be left no higher than 100 and the program can be ran every<br>
+30 seconds or so.
+
 
 The program will terminate when <code>max_records</code> is reached or <code>ctrl-c</code> is pressed.
 
