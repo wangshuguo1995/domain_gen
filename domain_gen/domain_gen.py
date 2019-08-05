@@ -4,8 +4,8 @@ from queue import Queue
 from time import sleep
 from sys import exit
 from utils import get_config, check_config, check_paths
-from utils import Subpaths, add_data, print_red
-from utils import Consumer, Producer, intro
+from utils import intro, add_data, print_red
+from utils import Consumer, Producer, Subpaths
 
 
 def produce_consume():
