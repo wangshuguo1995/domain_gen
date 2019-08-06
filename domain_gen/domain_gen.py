@@ -1,12 +1,12 @@
 #! /usr/bin/python3
+from multiprocessing import Process
 from threading import Thread
 from queue import Queue
-from multiprocessing import Process
 from time import sleep
 from sys import exit
 from utils import get_config, check_config, check_paths
-from utils import intro, add_data, print_red
 from utils import Consumer, Producer, Subpaths
+from utils import intro, add_data, print_red
 
 
 def produce_consume():
@@ -37,7 +37,6 @@ def produce_consume():
         print_red('writing to domains.json')
         p = Process(target=add_data, args=(real_path, consumer.get_domains()))
         p.start()
-        # add_data(real_path, consumer.get_domains())
     print_red('sleeping zzzzz...')
     sleep(config['interval'])
 

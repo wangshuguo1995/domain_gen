@@ -1,10 +1,10 @@
 #! /usr/bin/python3
-from yaml import safe_load
 from json import load, dump
-from random import randint
-from sys import exit
-from os import environ
+from yaml import safe_load
 from os.path import isfile
+from random import randint
+from os import environ
+from sys import exit
 from colorama import init
 from colorama import Fore, Style
 

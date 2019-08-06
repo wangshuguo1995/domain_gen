@@ -1,6 +1,6 @@
 #! /usr/bin/python3
-from .utils import print_red
 from .godaddy_api_wrapper import GodaddyApiWrapper
+from .utils import print_red
 
 
 class Consumer:
