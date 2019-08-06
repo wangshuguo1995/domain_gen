@@ -45,6 +45,8 @@ These values can be 'tuned' to display as many domains as possible without error
 
 REQUIREMENTS: Python3
 
+USAGE: python3 domain_gen.py
+
 <img src="https://github.com/rootVIII/domain_gen/blob/master/sc.png" alt="example1" height="675" width="700"><hr>
 
 This was developed on Ubuntu 18.04.4 LTS.
