@@ -30,7 +30,7 @@ interval: 60            -> time in seconds to wait between intervals
 <pre>
   <code>
 
-Unfortunatley GO Daddy has API restrictions that block repeated calls in succession (after 100-150).
+Unfortunatley Godaddy has API restrictions that block repeated calls in succession (after 100-150?).
 Therefore Domain Gen will make requests until max_requests is reached and then sleep for 60 seconds.
 The process is repeated indefinitely until <code>ctrl-c</code> is pressed.
 
