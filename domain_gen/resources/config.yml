@@ -1,5 +1,6 @@
 ---
 tld: .com
-max_try: 10
+max_try: 100
 write_to_file: True
+interval: 60
 ...

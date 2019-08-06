@@ -22,8 +22,11 @@ def read(path):
 def add_data(path, new_data):
     path += 'domains.json'
     if isfile(path):
-        existing = read(path)
-        write(path, existing + new_data)
+        try:
+            existing = read(path)
+            write(path, existing + new_data)
+        except Exception:
+            write(path, new_data)
     else:
         write(path, new_data)
 
@@ -48,7 +51,7 @@ def check_paths(words, configs):
 
 
 def check_config(conf):
-    if len(conf) != 3:
+    if len(conf) != 4:
         return 'Invalid config.yml values'
     try:
         api_keys()
@@ -58,6 +61,10 @@ def check_config(conf):
         int(conf['max_try'])
     except Exception:
         return 'Invalid max_try value in config.yml'
+    try:
+        float(conf['interval'])
+    except Exception:
+        return 'Invalid time interval in config.yml'
     if conf['tld'][0] != '.':
         return 'Top Level Domain name missing leading period'
     return None

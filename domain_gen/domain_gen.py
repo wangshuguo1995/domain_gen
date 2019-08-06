@@ -1,6 +1,7 @@
 #! /usr/bin/python3
 from threading import Thread
 from queue import Queue
+from multiprocessing import Process
 from time import sleep
 from sys import exit
 from utils import get_config, check_config, check_paths
@@ -34,15 +35,17 @@ def produce_consume():
     q.join()
     if config['write_to_file']:
         print_red('writing to domains.json')
-        add_data(real_path, consumer.get_domains())
+        p = Process(target=add_data, args=(real_path, consumer.get_domains()))
+        p.start()
+        # add_data(real_path, consumer.get_domains())
+    print_red('sleeping zzzzz...')
+    sleep(config['interval'])
 
 
 def thread_loop():
     intro()
     while True:
         produce_consume()
-        print_red('sleeping zzzzz...')
-        sleep(60)
 
 
 if __name__ == "__main__":

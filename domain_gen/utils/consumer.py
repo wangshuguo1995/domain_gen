@@ -1,5 +1,4 @@
 #! /usr/bin/python3
-from pprint import pprint
 from .utils import print_red
 from .godaddy_api_wrapper import GodaddyApiWrapper
 
@@ -17,7 +16,7 @@ class Consumer:
             if len(response) > 0:
                 record = {domain: response['price']}
                 self.domains.append(record)
-                pprint(record)
+                print(record)
             else:
                 print_red('%-50s Not Available' % domain)
             self.que.task_done()
