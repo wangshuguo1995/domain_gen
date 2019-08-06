@@ -5,10 +5,10 @@ from os.path import realpath
 class Rpath:
     def __init__(self):
         p = realpath(__file__)
-        if '\\' in p:
-            p = p.replace('\\', '/')
-        self.rpath = '/' + '/'.join([i for i in p.split("/")[:-2] if i])
-        self.rpath += '/'
+        if ':' not in p:
+            self.rpath = p[:-14]
+        else:
+            self.rpath = p[2:].replace('\\', '/')[:-14]
 
     def get_rpath(self):
         return self.rpath
