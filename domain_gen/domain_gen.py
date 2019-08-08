@@ -4,16 +4,13 @@ from threading import Thread
 from queue import Queue
 from time import sleep
 from sys import exit
-from utils import get_config, check_config, check_paths
-from utils import Consumer, Producer, Subpaths
+from utils import get_config, check_config, check_paths, paths
+from utils import Consumer, Producer
 from utils import intro, add_data, print_red
 
 
 def produce_consume():
-    paths = Subpaths()
-    real_path = paths.get_rpath()
-    word_path = paths.words_path()
-    config_path = paths.config_path()
+    real_path, word_path, config_path = paths()
     check_paths(word_path, config_path)
     config = get_config(config_path)
     try:

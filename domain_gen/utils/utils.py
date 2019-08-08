@@ -7,6 +7,12 @@ from os import environ
 from sys import exit
 from colorama import init
 from colorama import Fore, Style
+from .rpath import Subpaths
+
+
+def paths():
+    p = Subpaths()
+    return p.get_rpath(), p.words_path(), p.config_path()
 
 
 def write(path, json_data):
@@ -26,6 +32,9 @@ def add_data(path, new_data):
             existing = read(path)
             write(path, existing + new_data)
         except Exception:
+            m = 'Corrupt domains.json.\n'
+            m += 'Creating new domains.json'
+            print(m)
             write(path, new_data)
     else:
         write(path, new_data)
