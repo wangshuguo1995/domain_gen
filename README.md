@@ -28,6 +28,8 @@ default_word:
   word: word_here       -> The word that will be paired with a random word
   position: 1           -> 1 or 2 - The position that the default word will appear.
  
+ 
+ 
 If 'use_default' is True, 'word' will be used in each request at the
 given 'position' (1 or 2). If 'word' is set to apple, and position
 is 1, all domains found will use apple as the first word along with a
@@ -63,7 +65,7 @@ REQUIREMENTS: Python3
 
 USAGE: python3 domain_gen.py
 
-<img src="https://github.com/rootVIII/domain_gen/blob/master/sc.png" alt="example1" height="675" width="700">
+<img src="https://github.com/rootVIII/domain_gen/blob/master/sc.png" alt="example1">
 <hr>
 
 This was developed on Ubuntu 18.04.4 LTS.
