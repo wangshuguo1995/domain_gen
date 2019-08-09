@@ -13,6 +13,7 @@ def produce_consume():
     real_path, word_path, config_path = paths()
     check_paths(word_path, config_path)
     config = get_config(config_path)
+    error = check_config(config)
     try:
         error = check_config(config)
     except Exception as e:
@@ -28,7 +29,7 @@ def produce_consume():
         t = Thread(target=consumer.consume_domains)
         t.daemon = True
         t.start()
-    Producer(q, config['tld'], word_path, config['max_try']).get_doms()
+    Producer(q, config, word_path).get_doms()
     q.join()
     if config['write_to_file']:
         print_red('writing to domains.json')

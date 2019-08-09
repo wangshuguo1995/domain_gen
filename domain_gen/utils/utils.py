@@ -45,6 +45,14 @@ def get_config(path):
         return safe_load(yml_in)
 
 
+def get_1st(second, words):
+    return words[randint(0, len(words) - 1)] + second
+
+
+def get_2nd(first, words):
+    return first + words[randint(0, len(words) - 1)]
+
+
 def get_pair(words):
     return words[randint(0, len(words)-1)] + words[randint(0, len(words)-1)]
 
@@ -60,22 +68,30 @@ def check_paths(words, configs):
 
 
 def check_config(conf):
-    if len(conf) != 4:
-        return 'Invalid config.yml values'
     try:
         api_keys()
     except KeyError:
         return 'API Keys not stored as environment variables'
+    e = 'ERROR in config.yml:\n'
     try:
         int(conf['max_try'])
     except Exception:
-        return 'Invalid max_try value in config.yml'
+        return e + "Invalid 'max_try' value"
     try:
         float(conf['interval'])
     except Exception:
-        return 'Invalid time interval in config.yml'
+        return e + "Invalid 'time_interval'"
     if conf['tld'][0] != '.':
-        return 'Top Level Domain name missing leading period'
+        return e + 'Top Level Domain name missing leading period'
+    if conf['default_word']:
+        try:
+            int(conf['default_word']['position'])
+        except Exception:
+            return e + "Invalid 'position'"
+        if int(conf['default_word']['position']) not in (1, 2):
+            return e + "'position' may only be 1 or 2"
+        if conf['default_word']['word'] is None:
+            return e + "'default_word' is True but 'word' is missing"
     return None
 
 

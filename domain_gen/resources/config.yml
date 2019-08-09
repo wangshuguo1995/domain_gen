@@ -1,6 +1,10 @@
 ---
 tld: .com
 max_try: 100
-write_to_file: True
-interval: 60
+write_to_file: False
+interval: 30
+default_word:
+  use_default: False
+  word: apple
+  position: 1
 ...
