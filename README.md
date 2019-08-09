@@ -22,9 +22,9 @@ Set entries in <code>domain_gen/resources/config.yml</code> for:
 tld: .com               -> top level domain   (.com  .org  .net  .io   etc... include the leading '.')
 max_requests: 100       -> max number of URLs/attempts (always printed to stdout/terminal)
 write_to_file: False    -> available URLs/prices will be written to project root as JSON if set to True
-interval: 60            -> time in seconds to wait between intervals
+interval: 60            -> time in seconds to wait between intervals/batches of requests
 default_word:
-  use_default: True     -> True/False - if True the word will be used in each random domain test
+  use_default: True     -> True/False - if <code>True</code> the 'word' will be used in each random domain test
   word: word_here       -> The word that will be paired with a random word
   position: 1           -> 1 or 2 - The position that the default word will appear.
  
@@ -49,14 +49,14 @@ EX: catapple.com plasticapple.com outrageousapple.com
   <code>
 
 Unfortunatley Godaddy has API restrictions that block repeated calls in succession (after 100-150?).
-Therefore Domain Gen will make requests until max_requests is reached and then sleep for 60 seconds.
+Therefore Domain Gen will make requests until 'max_requests' is reached and then sleep for 60 seconds.
 The process is repeated indefinitely until <code>ctrl-c</code> is pressed.
 
 
-Therefore max_requests should be left at about 100 (lots of redlines in stdout is a sign that requests
-are being blocked). The interval should be set to 60 seconds or so.
+Therefore 'max_requests' should be left at about 100 (lots of redlines in stdout is a sign that requests
+are being blocked). The 'interval' should be set to 60 seconds or so.
 
-These values can be 'tuned' to display as many domains as possible without error for a given interval.
+These values can be tuned to display as many domains as possible without error for a given time interval.
 
   </code>
 </pre>
