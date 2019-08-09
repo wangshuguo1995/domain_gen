@@ -65,7 +65,7 @@ REQUIREMENTS: Python3
 
 USAGE: python3 domain_gen.py
 
-<img src="https://github.com/rootVIII/domain_gen/blob/master/sc.png" alt="example1">
+<img src="https://github.com/rootVIII/domain_gen/blob/master/sc.png" alt="example1" height="250" width="400">
 <hr>
 
 This was developed on Ubuntu 18.04.4 LTS.
