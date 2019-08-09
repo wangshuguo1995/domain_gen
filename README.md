@@ -53,7 +53,7 @@ Therefore Domain Gen will make requests until 'max_requests' is reached and then
 The process is repeated indefinitely until <code>ctrl-c</code> is pressed.
 
 
-Therefore 'max_requests' should be left at about 100 (lots of redlines in stdout is a sign that requests
+For this reason 'max_requests' should be left at about 100 (lots of redlines in stdout is a sign that requests
 are being blocked). The 'interval' should be set to 60 seconds or so.
 
 These values can be tuned to display as many domains as possible without error for a given time interval.
