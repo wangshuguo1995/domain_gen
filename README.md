@@ -66,19 +66,19 @@ REQUIREMENTS: any OS with Python3
 USAGE: python3 domain_gen.py
 
 
-<img src="https://github.com/rootVIII/domain_gen/blob/master/sc.png" alt="example1">
+<img src="https://github.com/rootVIII/domain_gen/blob/master/screenshots/sc.png" alt="example1">
 <hr>
 
 Apple used as default position 1:<br>
-<img src="https://github.com/rootVIII/domain_gen/blob/master/sc2.png" alt="example2">
+<img src="https://github.com/rootVIII/domain_gen/blob/master/screenshots/sc2.png" alt="example2">
 <hr>
 
 Apple used as default position 2:<br>
-<img src="https://github.com/rootVIII/domain_gen/blob/master/sc3.png" alt="example3">
+<img src="https://github.com/rootVIII/domain_gen/blob/master/screenshots/sc3.png" alt="example3">
 <hr>
 
 No default word (random pair):<br>
-<img src="https://github.com/rootVIII/domain_gen/blob/master/sc4.png" alt="example4">
+<img src="https://github.com/rootVIII/domain_gen/blob/master/screenshots/sc4.png" alt="example4">
 <hr>
 This was developed on Ubuntu 18.04.4 LTS.
 <hr>
