@@ -27,9 +27,12 @@ default_word:
   use_default: True     -> True/False - if <code>True</code> the 'word' will be used in each random domain test
   word: word_here       -> The word that will be paired with a random word
   position: 1           -> 1 or 2 - The position that the default word will appear.
- 
- 
- 
+  </code>
+</pre>
+
+
+<pre>
+  <code>
 If 'use_default' is True, 'word' will be used in each request at the
 given 'position' (1 or 2). If 'word' is set to apple, and position
 is 1, all domains found will use apple as the first word along with a
@@ -40,7 +43,6 @@ EX: appletest.com appletuesday.com appleword.com...
 Use position 2 if you want the first word to be random:
 
 EX: catapple.com plasticapple.com outrageousapple.com
- 
   </code>
 </pre>
 
