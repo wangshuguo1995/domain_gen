@@ -76,11 +76,11 @@ def check_config(conf):
     try:
         int(conf['max_try'])
     except Exception:
-        return e + "Invalid 'max_try' value"
+        return e + "invalid 'max_try' value"
     try:
         float(conf['interval'])
     except Exception:
-        return e + "Invalid 'time_interval'"
+        return e + "invalid 'time_interval'"
     if conf['tld'][0] != '.':
         return e + 'Top Level Domain name missing leading period'
     if conf['default_word']:
@@ -92,6 +92,9 @@ def check_config(conf):
             return e + "'position' may only be 1 or 2"
         if conf['default_word']['word'] is None:
             return e + "'default_word' is True but 'word' is missing"
+        for c in conf['default_word']['word']:
+            if not c.isalnum():
+                return e + "Invalid 'default word'"
     return None
 
 
