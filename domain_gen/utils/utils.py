@@ -83,7 +83,7 @@ def check_config(conf):
         return e + "invalid 'time_interval'"
     if conf['tld'][0] != '.':
         return e + 'Top Level Domain name missing leading period'
-    if conf['default_word']:
+    if conf['default_word']['use_default']:
         try:
             int(conf['default_word']['position'])
         except Exception:
