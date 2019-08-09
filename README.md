@@ -61,13 +61,24 @@ These values can be 'tuned' to display as many domains as possible without error
   </code>
 </pre>
 
-REQUIREMENTS: Python3
+REQUIREMENTS: any OS with Python3
 
 USAGE: python3 domain_gen.py
 
-<img src="https://github.com/rootVIII/domain_gen/blob/master/sc.png" alt="example1" height="250" width="400">
+<img src="https://github.com/rootVIII/domain_gen/blob/master/sc.png" alt="example1">
 <hr>
 
+Apple used as default position 1:
+<img src="https://github.com/rootVIII/domain_gen/blob/master/sc2.png" alt="example2">
+<hr>
+
+Apple used as default position 2:
+<img src="https://github.com/rootVIII/domain_gen/blob/master/sc3.png" alt="example3">
+<hr>
+
+No default word (random pair):
+<img src="https://github.com/rootVIII/domain_gen/blob/master/sc4.png" alt="example4">
+<hr>
 This was developed on Ubuntu 18.04.4 LTS.
 <hr>
 <b>Author: James Loye Colley  04AUG2019</b><br><br>
