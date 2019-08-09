@@ -5,6 +5,6 @@ write_to_file: False
 interval: 60
 default_word:
   use_default: False
-  word: python
+  word: apple
   position: 1
 ...
