@@ -47,20 +47,14 @@ EX: catapple.com plasticapple.com outrageousapple.com
 </pre>
 
 
-###### Unfortunatley Godaddy has API restrictions that block repeated
-###### calls in succession (after 100-150?). Therefore Domain Gen will
-###### make requests until 'max_requests' is reached and then sleep for
-###### the 'interval' time in seconds.
+###### Unfortunatley Godaddy has API restrictions that block repeated calls in succession (after 100-150?). Therefore Domain Gen will make requests until 'max_requests' is reached and then sleep for the 'interval' time in seconds.
 
 ###### The process is repeated indefinitely.
 ###### Press <code>ctrl-c</code> to exit.
 
-###### For this reason 'max_requests' should be left at about 100 (lots
-###### of redlines in stdout is a sign that requests are being blocked).
-###### The 'interval' should be set to 60 seconds or so.
+###### For this reason 'max_requests' should be left at about 100 (lots of redlines in stdout is a sign that requests are being blocked). The 'interval' should be set to 60 seconds or so.
 
-###### These values can be tuned to display as many domains as possible
-###### without error for a given time interval.
+###### These values can be tuned to display as many domains as possible without error for a given time interval.
 
 
 REQUIREMENTS: any OS with Python3
