@@ -20,7 +20,7 @@ GODADDY_SECRET=xxxxxxxxxxxxxxxxxxxxxxx
 <pre>
   <code>
 tld: .com               -> top level domain   (.com  .org  .net  .io   etc... include the leading '.')
-max_try: 100       -> max number of requests/attempts (always printed to stdout/terminal)
+max_try: 100            -> max number of requests/attempts (always printed to stdout/terminal)
 write_to_file: False    -> available URLs/prices will be written to project root as JSON if set to True
 interval: 60            -> time in seconds to wait between intervals/batches of requests
 default_word:
