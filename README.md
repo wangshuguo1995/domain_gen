@@ -52,8 +52,10 @@ EX: catapple.com plasticapple.com outrageousapple.com
 
 Unfortunatley Godaddy has API restrictions that block repeated calls in
 succession (after 100-150?). Therefore Domain Gen will make requests
-until 'max_requests' is reached and then sleep for 60 seconds. The
-process is repeated indefinitely until <code>ctrl-c</code> is pressed.
+until 'max_requests' is reached and then sleep for the 'interval' time
+in seconds.
+
+The process is repeated indefinitely until <code>ctrl-c</code> is pressed.
 
 
 For this reason 'max_requests' should be left at about 100 (lots of
