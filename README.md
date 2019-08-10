@@ -20,7 +20,7 @@ GODADDY_SECRET=xxxxxxxxxxxxxxxxxxxxxxx
 <pre>
   <code>
 tld: .com               -> top level domain   (.com  .org  .net  .io   etc... include the leading '.')
-max_requests: 100       -> max number of requests/attempts (always printed to stdout/terminal)
+max_try: 100       -> max number of requests/attempts (always printed to stdout/terminal)
 write_to_file: False    -> available URLs/prices will be written to project root as JSON if set to True
 interval: 60            -> time in seconds to wait between intervals/batches of requests
 default_word:
@@ -47,18 +47,18 @@ EX: catapple.com plasticapple.com outrageousapple.com
 </pre>
 
 
-###### Unfortunatley Godaddy has API restrictions that block repeated calls in succession (after 100-150?). Therefore Domain Gen will make requests until 'max_requests' is reached and then sleep for the 'interval' time in seconds.
+###### Unfortunatley Godaddy has API restrictions that block repeated calls in succession (after 100-150?). Therefore Domain Gen will make requests until 'max_try' is reached and then sleep for the 'interval' time in seconds.
 
 ###### The process is then repeated indefinitely. Press <code>ctrl-c</code> to exit at any time.
 
-###### For this reason 'max_requests' should be left at about 100 (lots of redlines in stdout is a sign that requests are being blocked). The 'interval' should be set to 60 seconds or so.
+###### For this reason 'max_try' should be left at about 100. The 'interval' should be set to 60 seconds or so. Lots of redlines in stdout is a sign that requests are being blocked and either the 'interval' is to low or the 'max_try' value is to high.
 
 ###### These values can be tuned to display as many domains as possible without error for a given time interval.
 
 
 REQUIREMENTS: any OS with Python3
 
-USAGE: python3 domain_gen.py
+USAGE: <code>python3 domain_gen.py</code>
 
 
 <img src="https://github.com/rootVIII/domain_gen/blob/master/screenshots/sc.png" alt="example1">
