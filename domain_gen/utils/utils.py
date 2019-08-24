@@ -128,5 +128,5 @@ def intro():
 
 
 def print_red(red_str):
-    print(Fore.LIGHTRED_EX + red_str)
+    print(Fore.LIGHTRED_EX + red_str, end='')
     print(Style.RESET_ALL)
